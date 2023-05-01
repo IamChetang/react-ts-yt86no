@@ -1,6 +1,13 @@
+import { useEffect } from 'react';
 import * as React from 'react';
 
 export default function WelcomePage() {
+  const signInPage = () => {
+    window.location.pathname = '/SignIn';
+  };
+  const signUpPage = () => {
+    window.location.pathname = '/SignUp';
+  };
   return (
     <div className="welcome_container">
       <div className="heading">
@@ -9,9 +16,12 @@ export default function WelcomePage() {
       </div>
       <div className="content">
         <p>Existing customer / Get started</p>
-        <button className="btn">Sign in</button>
+        <button onClick={() => signInPage()} className="btn">
+          Sign in
+        </button>
         <p>
-          New customer? <span>Create a new account</span>
+          New customer?{' '}
+          <span onClick={() => signUpPage()}>Create a new account</span>
         </p>
       </div>
     </div>

@@ -1,10 +1,8 @@
 import * as React from 'react';
 import { useNavigate } from 'react-router-dom';
-export default function SignInPage() {
+
+export default function VerifyPasscode() {
   const navigate = useNavigate();
-  const forgotPassword = () => {
-    window.location.pathname = '/ForgotPassword';
-  };
   return (
     <div className="welcome_container">
       <div className="back_container" onClick={() => navigate(-1)}>
@@ -33,8 +31,11 @@ export default function SignInPage() {
         <span>Back</span>
       </div>
       <div className="heading">
-        <h1>Sign in</h1>
-        <p>Please log in into your account</p>
+        <h1>Forgot password?</h1>
+        <p>
+          Enter your email for the verificaton process, we will send you the
+          code to your email
+        </p>
       </div>
       <div className="content">
         <div className="input_container">
@@ -42,36 +43,9 @@ export default function SignInPage() {
           <input placeholder="Enter a email here" type="email"></input>
         </div>
         &nbsp;
-        <div className="input_container">
-          <label>Password</label>
-          <input placeholder="Enter a password here" type="password"></input>
-        </div>
-        <p
-          className="forgot"
-          style={{ cursor: 'pointer' }}
-          onClick={() => forgotPassword()}
-        >
-          Forgot password?
-        </p>
-        <button className="btn">Sign in</button>
+        <button className="btn">Continue</button>
       </div>
-      <div className="login_container">
-        <button className="btn_outer">
-          <img
-            src="https://img.icons8.com/3d-fluency/94/null/google-logo.png"
-            className="google"
-          />
-          Sign in with google
-        </button>
-        &nbsp;
-        <button className="btn_outer">
-          <img
-            src="https://img.icons8.com/fluency/48/null/facebook.png"
-            className="google"
-          />
-          Sign in with facebook
-        </button>
-      </div>
+      <div className="login_container"></div>
     </div>
   );
 }
